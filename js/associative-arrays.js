@@ -146,14 +146,14 @@ array.reduce((sum, el) => { // находим сумму элементов в �
 }, 0)
 
 // удаляем первого студента
-console.log(students.reduce((acc, el) => {
-  if(el.id !== 1) {
-    acc.push(el)
-    return acc
-  } else {
-    return acc
-  }
-}, [])) // массив будет без Боба
+// console.log(students.reduce((acc, el) => {
+//   if(el.id !== 1) {
+//     acc.push(el)
+//     return acc
+//   } else {
+//     return acc
+//   }
+// }, [])) // массив будет без Боба
 
 
 const stsAge = {
@@ -162,12 +162,12 @@ const stsAge = {
   '33': 2
 }
 // собираем объект по возрасту
-console.log(students.reduce((acc, el) => {
-  if(Object.keys(acc).includes(String(el.age))) {
-    acc[el.age] = acc[el.age] + 1
-    return acc
-  } else {
-    acc[el.age] = 1
-    return acc
-  }
-}, {})) // 20:1 22:1 33:2
+// console.log(students.reduce((acc, el) => {
+//   if(Object.keys(acc).includes(String(el.age))) {
+//     acc[el.age] = acc[el.age] + 1
+//     return acc
+//   } else {
+//     acc[el.age] = 1
+//     return acc
+//   }
+// }, {})) // 20:1 22:1 33:2

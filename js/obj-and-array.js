@@ -192,6 +192,12 @@ const wishes4 = wishes.map(el => ({...el, id: el.id + 1}))
 const wishes5 = wishes.map(el => ({...el, checked: !el.checked}))
 // console.log(wishes5)
 
+// Поверхностная копия (скопировали только массив)
+console.log([...wishes])
+
+// Глубокая копия (скопировали массив и все объекты лежащие в нем)
+console.log(wishes.map(w => ({...w})))
+
 
 
 const wishes6 = {
@@ -209,4 +215,4 @@ const wishes6 = {
 
 // копируем wishes6, после копируем phones и через мап прогоняем элементы и через условие ищем где нужно заменить title (делаем копию элемента объекта и перезаписываем название)
 const wishes7 = {...wishes6, phones: wishes6.phones.map(el => el.id === 2 ? {...el, title:'Samsung Galaxy S7'} : el)}
-console.log(wishes7)
+// console.log(wishes7)
