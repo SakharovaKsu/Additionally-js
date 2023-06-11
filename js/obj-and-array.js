@@ -326,10 +326,11 @@ let man5FullCopy = {
   mother: {...man5.mother,
     work: {...man5.mother.work},
     parents: man5.mother.parents.map(el => el)}}
-console.log(man5FullCopy)
+// console.log(man5FullCopy)
+// console.dir(man5FullCopy,{depth:null})
 
 const man55 = man5.mother.parents.map(el => el)
-console.log(man55)
+// console.log(man55)
 
 
 // 9 Object inside an object -> array -> object ->  object
@@ -362,14 +363,15 @@ let man6 = {
   }
 };
 
-// let man6FullCopy = {...man6,
-//   mother: {...man6.mother,
-//     work: {...man6.mother.work},
-//     parents: man6.mother.parents.map(el => (({
-//       ...el,
-//       favoriteDish: el.parents.title
-//     })))}}
+let man6FullCopy = {...man6,
+  mother: {...man6.mother,
+    work: {...man6.mother.work},
+    parents: man6.mother.parents.map(el => (({
+      ...el,
+      favoriteDish: el.favoriteDish.title
+    })))}}
 // console.log(man6FullCopy)
+// console.dir(man6FullCopy,{depth:null})
 
 
 //10 Array of objects inside an object -> object -> array -> object ->  object
@@ -411,4 +413,7 @@ let man7 = {
   }
 };
 
-let man7FullCopy  //  your code
+let man7FullCopy = {...man7, mother: {...man7.mother, work: {...man7.mother.work}, parents: man7.mother.parents.map(el => ({...el, favoriteDish: {
+        ...el.favoriteDish, ingredients: el.favoriteDish.ingredients.map(el => el)
+      }}))}} //
+// console.dir(man6FullCopy,{depth:null})
