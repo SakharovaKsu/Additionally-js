@@ -129,3 +129,64 @@ for (let j = 0; j < numbers.length - 1; j++) {
 // Зачем нам два раза for? Что б цикл повторить повторно до тех пор, пока все элементы не от сортируются. Если было бы один for, то его надо было бы тогда повторить 4 раза, но что б этого не делать, создаем другой цикл и в него вставляем 2-ой цикл
 
 
+
+
+const students = [
+  {
+    name: "Bob",
+    age: 22,
+    isMarried: true,
+    scores: 85,
+  },
+  {
+    name: "Alex",
+    age: 21,
+    isMarried: true,
+    scores: 90,
+  },
+  {
+    name: "Nick",
+    age: 20,
+    isMarried: false,
+    scores: 120,
+  },
+  {
+    name: "John",
+    age: 19,
+    isMarried: false,
+    scores: 100,
+  },
+  {
+    name: "Helen",
+    age: 20,
+    isMarried: false,
+    scores: 110,
+  },
+  {
+    name: "Ann",
+    age: 20,
+    isMarried: false,
+    scores: 105,
+  },
+];
+
+const deepCopyStudents = students.map((st) => ({ ...st }));
+
+// Отсортируйте студентов по успеваемости (лучший идёт первым)
+deepCopyStudents.sort((a, b) => b.scores - a.scores);
+
+// Отсортируйте студентов по алфавиту
+function sortByName(a, b) {
+  switch (a.name > b.name) {
+    case true:
+      return 1;
+    case false:
+      return -1;
+    default:
+      return 0;
+  }
+}
+
+// const sortedByName = deepCopyStudents.sort((a, b) => a.name >= b.name ? 1 : -1);
+const sortedByName = students.sort((a, b)=> a.name.localeCompare(b.name));
+

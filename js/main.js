@@ -8,3 +8,4 @@
 import * as arrays from './associative-arrays.js';
 import * as objArray from './obj-and-array.js';
 import * as sort from './method-sort.js'
+import * as methods from './methods.js'

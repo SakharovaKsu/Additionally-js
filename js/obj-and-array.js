@@ -266,7 +266,7 @@ let people = [
   {name: "William", age: 28}
 ];
 
-let peopleFullCopy = [...people.map(el => el)]
+let peopleFullCopy = [...people.map(el => ({...el}))]
 // console.log((people === peopleFullCopy))  // false
 
 
@@ -281,7 +281,7 @@ let man3 = {
   ]
 };
 
-let man3FullCopy = {...man3, friends: man3.friends.map(el => el)}
+let man3FullCopy = {...man3, friends: man3.friends.map(el => ({...el}))}
 // console.log(man3 === man3FullCopy) // false
 
 
@@ -325,11 +325,11 @@ let man5FullCopy = {
   ...man5,
   mother: {...man5.mother,
     work: {...man5.mother.work},
-    parents: man5.mother.parents.map(el => el)}}
+    parents: man5.mother.parents.map(el => ({...el}))}}
 // console.log(man5FullCopy)
 // console.dir(man5FullCopy,{depth:null})
 
-const man55 = man5.mother.parents.map(el => el)
+const man55 = man5.mother.parents.map(el => ({...el}))
 // console.log(man55)
 
 
