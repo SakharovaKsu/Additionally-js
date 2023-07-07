@@ -43,3 +43,28 @@ function roundToNext5(n){
 function problem(x){
   return typeof x === 'number' ? x * 50 + 6 : 'Error';
 }
+
+
+// 8kyu Напишите функцию bmi, которая вычисляет индекс массы тела (bmi = вес / рост2).
+// если ИМТ <= 18,5, вернуть "Недостаточный вес" если ИМТ <= 25,0,
+// вернуть «Нормальный»
+// если ИМТ <= 30,0 вернуть "Избыточный вес"
+// если ИМТ > 30, верните «Ожирение».
+
+function bmi(weight, height) {
+  let a = weight / height ** 2
+  if(a <= 18.5 ) {
+    return "Underweight"
+  } else if (a <= 25.0) {
+    return "Normal"
+  } else if (a <= 30.0) {
+    return "Overweight"
+  } else if (a > 30.0) {
+    return "Obese"
+  }
+}
+
+// 8kyu Создайте функцию с именем ярлык для удаления строчных гласных (a, e, i, o, u) в заданной строке.
+function shortcut (string) {
+  return string.replace(/[aeiou]/gi, '');
+}
